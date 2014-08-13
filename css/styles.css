@@ -17,7 +17,7 @@ $$ |     \$$$$$$$ |$$ |     \$$$$$$$ |$$ |$$ |\$$$$$$$ |$$  /\$$\
 
   .parallax {
     height: 500px; /* fallback for older browsers */
-    height: 125vh;
+    height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-perspective: 300px;
@@ -27,7 +27,7 @@ $$ |     \$$$$$$$ |$$ |     \$$$$$$$ |$$ |$$ |\$$$$$$$ |$$  /\$$\
   .parallax__group {
     position: relative;
     height: 500px; /* fallback for older browsers */
-    height: 125vh;
+    height: 120vh;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
   }
@@ -92,13 +92,39 @@ $$ |     \$$$$$$$ |$$ |     \$$$$$$$ |$$ |$$ |\$$$$$$$ |$$  /\$$\
 
    /* centre the content in the parallax layers */
   .title {
-    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 76px;
+    font-style: italic;
+    color: white;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    left: 15%;
+    top: 10%;
+    /*-webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);*/
   }
+
+   .sub-title {
+    font-weight: 400;
+    font-size: 36px;
+    font-style: italic;
+    -webkit-transform: translate(20%, -50%);
+    transform: translate(20%, -50%);
+  }
+
+ .spnMoreDetails {
+  position: absolute;
+  top : 40%;
+  right: 5%;
+ }
+
+  #group2 .title { color: orangered; }
+  #group3 .title { color: blue; }
+  #group4 .title {  -webkit-transform: translate(0%, 40px);
+    transform: translate(0%, 40px); color: red; }
+  #group5 .title { color: green; }
+  #group6 .title { color: yellow; }
+  #group7 .title { color: blue; }
 
 
   .parallax__group {
@@ -185,7 +211,7 @@ $$ |     \$$$$$$$ |$$ |     \$$$$$$$ |$$ |$$ |\$$$$$$$ |$$  /\$$\
     background-repeat: no-repeat;
   }
 
-.demo__info {
+.side_nav {
 position: absolute;
 opacity: 0.2;
 z-index:100;
@@ -197,4 +223,26 @@ width: 30px;
 height: 100%;
 padding: 20px;
 background: white;
+}
+
+.side_nav a {
+  text-decoration: none;
+}
+
+.side_nav:hover {
+  opacity: 1;
+  transition : all 0.5s;
+}
+
+.side_nav .imgFlags {
+  opacity: 0.4;
+  height: 30px;
+  width: 30px;
+}
+
+.imgFlags:hover {
+  opacity: 1;
+  -webkit-transform : translateZ(5px) scale(1.5);
+  transform : translateZ(5px) scale(1.5);
+  transition : transform 0.3s;
 }
