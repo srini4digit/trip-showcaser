@@ -116,6 +116,20 @@ $$ |     \$$$$$$$ |$$ |     \$$$$$$$ |$$ |$$ |\$$$$$$$ |$$  /\$$\
   position: absolute;
   top : 40%;
   right: 5%;
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  cursor: pointer;
+ }
+
+ .spnMoreDetails .fa {
+  margin-left: 36%;
+ }
+
+ .spnMoreDetails:hover {
+  background: antiquewhite;
+  -webkit-transition: all 0.5s;
+  transition : all 0.5s;
  }
 
   #group2 .title { color: orangered; }
@@ -219,7 +233,7 @@ left: 0vh;
 top: auto;
 font-size:80%;
 text-align:center;
-width: 30px;
+width: 50px;
 height: 100%;
 padding: 20px;
 background: white;
