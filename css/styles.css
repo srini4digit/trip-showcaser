@@ -1,15 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
 
 /*
-$$$$$$$\                              $$\ $$\                     
-$$  __$$\                             $$ |$$ |                    
-$$ |  $$ |$$$$$$\   $$$$$$\  $$$$$$\  $$ |$$ | $$$$$$\  $$\   $$\ 
-$$$$$$$  |\____$$\ $$  __$$\ \____$$\ $$ |$$ | \____$$\ \$$\ $$  |
-$$  ____/ $$$$$$$ |$$ |  \__|$$$$$$$ |$$ |$$ | $$$$$$$ | \$$$$  / 
-$$ |     $$  __$$ |$$ |     $$  __$$ |$$ |$$ |$$  __$$ | $$  $$<  
-$$ |     \$$$$$$$ |$$ |     \$$$$$$$ |$$ |$$ |\$$$$$$$ |$$  /\$$\ 
-\__|      \_______|\__|      \_______|\__|\__| \_______|\__/  \__|
-                                                                  
+* $$$$$$$\                              $$\ $$\                     
+* $$  __$$\                             $$ |$$ |                    
+* $$ |  $$ |$$$$$$\   $$$$$$\  $$$$$$\  $$ |$$ | $$$$$$\  $$\   $$\ 
+* $$$$$$$  |\____$$\ $$  __$$\ \____$$\ $$ |$$ | \____$$\ \$$\ $$  |
+* $$  ____/ $$$$$$$ |$$ |  \__|$$$$$$$ |$$ |$$ | $$$$$$$ | \$$$$  / 
+* $$ |     $$  __$$ |$$ |     $$  __$$ |$$ |$$ |$$  __$$ | $$  $$<  
+* $$ |     \$$$$$$$ |$$ |     \$$$$$$$ |$$ |$$ |\$$$$$$$ |$$  /\$$\ 
+* \__|      \_______|\__|      \_______|\__|\__| \_______|\__/  \__|
 */
 
   /* Parallax base styles
@@ -27,7 +26,7 @@ $$ |     \$$$$$$$ |$$ |     \$$$$$$$ |$$ |$$ |\$$$$$$$ |$$  /\$$\
   .parallax__group {
     position: relative;
     height: 500px; /* fallback for older browsers */
-    height: 120vh;
+    height: 100vh;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
   }
@@ -86,6 +85,10 @@ $$ |     \$$$$$$$ |$$ |     \$$$$$$$ |$$ |$$ |\$$$$$$$ |$$  /\$$\
     padding:0;
   }
 
+  .displayHide {
+    display: none;
+  }
+
   .parallax {
     font-size: 200%;
   }
@@ -93,6 +96,7 @@ $$ |     \$$$$$$$ |$$ |     \$$$$$$$ |$$ |$$ |\$$$$$$$ |$$  /\$$\
    /* centre the content in the parallax layers */
   .title {
     font-family: 'Playfair Display', serif;
+    text-transform: capitalize;
     font-weight: 700;
     font-size: 76px;
     font-style: italic;
@@ -112,7 +116,7 @@ $$ |     \$$$$$$$ |$$ |     \$$$$$$$ |$$ |$$ |\$$$$$$$ |$$  /\$$\
     transform: translate(20%, -50%);
   }
 
- .spnMoreDetails {
+ /*.spnMoreDetails {
   position: absolute;
   top : 40%;
   right: 5%;
@@ -130,15 +134,14 @@ $$ |     \$$$$$$$ |$$ |     \$$$$$$$ |$$ |$$ |\$$$$$$$ |$$  /\$$\
   background: antiquewhite;
   -webkit-transition: all 0.5s;
   transition : all 0.5s;
- }
+ }*/
 
-  #group2 .title { color: orangered; }
-  #group3 .title { color: blue; }
-  #group4 .title {  -webkit-transform: translate(0%, 40px);
-    transform: translate(0%, 40px); color: red; }
-  #group5 .title { color: green; }
-  #group6 .title { color: yellow; }
-  #group7 .title { color: blue; }
+  #group02 .title { color: orangered; }
+  #group03 .title { color: blue; }
+  #group04 .title { color: red; }
+  #group05 .title { color: green; }
+  #group06 .title { color: yellow; }
+  #group07 .title { color: blue; }
 
 
   .parallax__group {
@@ -146,24 +149,90 @@ $$ |     \$$$$$$$ |$$ |     \$$$$$$$ |$$ |$$ |\$$$$$$$ |$$  /\$$\
     transition: transform 0.5s;
   }
 
+/* Page 2 effects */
+.additional_content {
+  z-index: 8;
+  position: absolute;
+  top : 100px;
+}
 
-  /* style the groups
-  --------------------------------------------- */
+/*
+*  /$$$$$$$$                  /$$                          
+* |__  $$__/                 | $$                          
+*    | $$  /$$$$$$   /$$$$$$ | $$$$$$$   /$$$$$$   /$$$$$$ 
+*    | $$ /$$__  $$ /$$__  $$| $$__  $$ |____  $$ /$$__  $$
+*    | $$| $$  \ $$| $$  \ $$| $$  \ $$  /$$$$$$$| $$  \__/
+*    | $$| $$  | $$| $$  | $$| $$  | $$ /$$__  $$| $$      
+*    | $$|  $$$$$$/| $$$$$$$/| $$$$$$$/|  $$$$$$$| $$      
+*    |__/ \______/ | $$____/ |_______/  \_______/|__/      
+*                  | $$                                    
+*                  | $$                                    
+*                  |__/                                    
+*/
 
-  #group1 {
+.parallax__layer--back.topbar,.parallax__layer--deep.topbar {
+  -webkit-transform: translateZ(0px) scale(1);
+  transform: translateZ(0px) scale(1);
+  background-position: 0% 45%;
+}
+
+div.title.topbar {
+  transform : translate(55%,-10%);
+  transition : transform 1s;
+}
+
+#group06 > div.title.topbar {
+  transform: translate(100%,-80%);
+  z-index: 6;
+  transition: transform 1s;
+}
+
+div.sub-title.topbar {
+  display: inline-block;
+}
+
+span.icon-wrap.topbar {
+  text-align: center;
+  position: absolute;
+  z-index: 100;
+  padding: 17px 10px;
+  border: 0px solid #b24e44;
+  background: #b24e44;
+  width: 50px;
+  top: -100px;
+  left: 0;
+  opacity: 0.8;
+  transition : opacity 1s;
+}
+
+/* style the groups
+*     /$$$$$$                                         
+*  /$$__  $$                                        
+* | $$  \__/  /$$$$$$   /$$$$$$  /$$   /$$  /$$$$$$ 
+* | $$ /$$$$ /$$__  $$ /$$__  $$| $$  | $$ /$$__  $$
+* | $$|_  $$| $$  \__/| $$  \ $$| $$  | $$| $$  \ $$
+* | $$  \ $$| $$      | $$  | $$| $$  | $$| $$  | $$
+* |  $$$$$$/| $$      |  $$$$$$/|  $$$$$$/| $$$$$$$/
+*  \______/ |__/       \______/  \______/ | $$____/ 
+*                                         | $$      
+*                                         | $$      
+*                                         |__/      
+  */
+
+  #group01 {
     z-index: 5; /* slide over group 2 */
   }
-  #group1 .parallax__layer--base {
+  #group01 .parallax__layer--base {
     /*background: rgb(102,204,102);*/
     background: url('../assets/pics/01-iceland.jpg');
     background-size: 1790px 1400px;
     background-repeat: no-repeat;
   }
 
-  #group2 {
+  #group02 {
     z-index: 3; /* slide under groups 1 and 3 */
   }
-  #group2 .parallax__layer--back {
+  #group02 .parallax__layer--back {
     /*background: rgb(123,210,102);*/
      background: url('../assets/pics/02-amsterdam.jpg');
     background-size: 1790px 1400px;
@@ -171,10 +240,10 @@ $$ |     \$$$$$$$ |$$ |     \$$$$$$$ |$$ |$$ |\$$$$$$$ |$$  /\$$\
     background-position: 0% 30%;
   }
 
-  #group3 {
+  #group03 {
     z-index: 4; /* slide over group 2 and 4 */
   }
-  #group3 .parallax__layer--base {
+  #group03 .parallax__layer--base {
     /*background: rgb(153,216,101);*/
      background: url('../assets/pics/03-paris.jpg');
     background-size: 1790px 1400px;
@@ -182,32 +251,29 @@ $$ |     \$$$$$$$ |$$ |     \$$$$$$$ |$$ |$$ |\$$$$$$$ |$$  /\$$\
     background-position: 0% 20%;
   }
 
-  #group4 {
+  #group04 {
     z-index: 2; /* slide under group 3 and 5 */
   }
-  #group4 .parallax__layer--deep {
-    /*background: rgb(184,223,101);*/
-    height: 150vh;
+  #group04 .parallax__layer--deep {
+    /*height: 150vh;*/
     background: url('../assets/pics/04-swiss.jpg');
     background-size: 1790px 1400px;
     background-repeat: no-repeat;
   }
 
-  #group5 {
+  #group05 {
     z-index: 3; /* slide over group 4 and 6 */
   }
-  #group5 .parallax__layer--base {
-    /*background: rgb(214,229,100);*/
+  #group05 .parallax__layer--base {
     background: url('../assets/pics/05-rome.jpg');
     background-size: 1790px 1400px;
     background-repeat: no-repeat;
   }
 
-  #group6 {
+  #group06 {
     z-index: 2; /* slide under group 5 and 7 */
   }
-  #group6 .parallax__layer--back {
-    /*background: rgb(245,235,100);*/
+  #group06 .parallax__layer--back {
     background: url('../assets/pics/06-austria.jpg');
     background-size: 1790px 1400px;
     background-repeat: no-repeat;
@@ -215,27 +281,37 @@ $$ |     \$$$$$$$ |$$ |     \$$$$$$$ |$$ |$$ |\$$$$$$$ |$$  /\$$\
     /*height: 150vh;*/
   }
 
-  #group7 {
+  #group07 {
     z-index: 3; /* slide over group 7 */
   }
-  #group7 .parallax__layer--base {
+  #group07 .parallax__layer--base {
     /*background: rgb(255,241,100);*/
         background: url('../assets/pics/07-usa.jpg');
     background-size: 1790px 1400px;
     background-repeat: no-repeat;
   }
+/*
+  /$$$$$$  /$$       /$$                 /$$   /$$                     
+ /$$__  $$|__/      | $$                | $$$ | $$                     
+| $$  \__/ /$$  /$$$$$$$  /$$$$$$       | $$$$| $$  /$$$$$$  /$$    /$$
+|  $$$$$$ | $$ /$$__  $$ /$$__  $$      | $$ $$ $$ |____  $$|  $$  /$$/
+ \____  $$| $$| $$  | $$| $$$$$$$$      | $$  $$$$  /$$$$$$$ \  $$/$$/ 
+ /$$  \ $$| $$| $$  | $$| $$_____/      | $$\  $$$ /$$__  $$  \  $$$/  
+|  $$$$$$/| $$|  $$$$$$$|  $$$$$$$      | $$ \  $$|  $$$$$$$   \  $/   
+ \______/ |__/ \_______/ \_______/      |__/  \__/ \_______/    \_/    
+*/
 
 .side_nav {
 position: absolute;
-opacity: 0.2;
+opacity: 0.5;
 z-index:100;
 left: 0vh;
 top: auto;
 font-size:80%;
 text-align:center;
-width: 50px;
+width: 100px;
 height: 100%;
-padding: 20px;
+/*padding-left: 10px;*/
 background: white;
 }
 
@@ -246,17 +322,4 @@ background: white;
 .side_nav:hover {
   opacity: 1;
   transition : all 0.5s;
-}
-
-.side_nav .imgFlags {
-  opacity: 0.4;
-  height: 30px;
-  width: 30px;
-}
-
-.imgFlags:hover {
-  opacity: 1;
-  -webkit-transform : translateZ(5px) scale(1.5);
-  transform : translateZ(5px) scale(1.5);
-  transition : transform 0.3s;
 }
