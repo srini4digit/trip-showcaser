@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="flight_path.svg">
+   sodipodi:docname="path-flight.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -43,7 +43,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -52,24 +52,9 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-1002.3622)">
-    <path
-       sodipodi:type="arc"
-       style="fill:none;stroke:#5a5a5a;stroke-width:0.98316771;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-       id="path3763"
-       sodipodi:cx="32.75"
-       sodipodi:cy="22"
-       sodipodi:rx="18"
-       sodipodi:ry="21.5"
-       d="m 50.75,22 a 18,21.5 0 1 1 -36,-1e-6"
-       transform="matrix(-0.01526939,-1.4238294,0.33034481,-0.06581307,15.033627,1075.9428)"
-       sodipodi:start="0"
-       sodipodi:end="3.1415927"
-       sodipodi:open="true"
-       inkscape:transform-center-x="2.0668602"
-       inkscape:transform-center-y="19.954953" />
     <g
        id="g3778"
-       transform="matrix(-0.03312008,0.72741083,-0.74903479,-0.05374931,42.161938,1014.6098)"
+       transform="matrix(-0.50099793,1.4486943,-1.5540524,-0.58370926,56.717277,1015.466)"
        style="fill:#5a5a5a;fill-opacity:1">
       <g
          id="icomoon-ignore"
