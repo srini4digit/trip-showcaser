@@ -12,7 +12,7 @@ $(document).ready(function(){
       });
   });
 
-  addTitles();
+  addContent();
   drawTravelPath(tripdata);
 
 });
@@ -24,18 +24,59 @@ function scrollTopTween(scrollTop) {
  };
 }
 
-function addTitles(){
+function addContent(){
 
  var mainContents = d3.selectAll(".divContent").data(tripdata.details); // Grab all the placeholders
- mainContents.append("div") // Attach the titles and subtitles
+ // Attach the titles and subtitles
+ mainContents.append("div") 
              .attr("class","title")
              .html(function(d,i){
               return d.title; // + "<div class='sub-title'>"+d.subtitle+"</div>";
              })
              .append("div").attr("class","sub-title").html(function(d,i){ return d.subtitle;});
              ;
-// Now add the "More Details link"
 
+var addContents = d3.selectAll(".additional_content").data(tripdata.details); // Grab all the additional content
+ // Attach the back link
+ addContents.append("span") 
+             .attr("class","icon-wrap topbar")
+             .attr("data-group",function(d,i){ return "group0"+(i+1);})
+             .html(function(d,i){
+              return '<i class="fa fa-angle-left fa-2x"></i>';
+             })
+             .on("click",function(){
+                // On Click add the other details
+                var thisGroup = $(this).attr("data-group");
+                // Show the link for Details and navigation bar
+                $("a.next").removeClass("displayHide");
+                $(".side_nav").removeClass("displayHide");
+                         
+                // Shrink the main div into the top bar
+                $("#"+thisGroup+" > .divContent")
+                  .animate({ height:'100%'},800);
+                $("#"+thisGroup+" > .parallax__layer--back")
+                  .animate({ height:'100%'},800);  
+                $("#"+thisGroup+" > .parallax__layer--back").removeClass("topbar");
+                $("#"+thisGroup+" > .parallax__layer--deep")
+                  .animate({ height:'100%'},800);  
+                $("#"+thisGroup+" > .parallax__layer--deep").removeClass("topbar");
+                
+                // Animate the title to the center
+                $("#"+thisGroup).find("div.title").removeClass("topbar");
+                $("#"+thisGroup).find("div.sub-title").removeClass("topbar");
+
+                // Hide the details page
+                $(".additional_content").addClass("displayHide");
+
+                //Show all other places
+                $(".parallax__group").removeClass("displayHide");
+
+
+                //$("#"+$(this).attr("data-group")).addClass("displayHide");
+
+      })
+
+// Now add the "More Details link"
 var innerA = mainContents.append("section").attr("class",function(d,i){ return "color-"+d.id})
             .append("nav").attr("class","nav-growpop")
             .append("a").attr("class","next").attr("href","#").attr("data-group",function(d,i){ return "group0"+(i+1);});
@@ -44,7 +85,7 @@ var innerA = mainContents.append("section").attr("class",function(d,i){ return "
       innerA.append("div").html(function(d,i){ return '<span>More Info</span><h3>'+d.moredetailsinfo+'</h3><img src="'+d.images.moredetailsthumbnail+'" alt="Next thumb"/>'});
       
       innerA.on("click",function(){
-        
+        // On Click add the other details
         var thisGroup = $(this).attr("data-group");
         // Hide the nav bar and navigation bar
         $(this).addClass("displayHide");
@@ -77,7 +118,7 @@ var innerA = mainContents.append("section").attr("class",function(d,i){ return "
 
         //$("#"+$(this).attr("data-group")).addClass("displayHide");
 
-      })
+      });
 
 }
 
