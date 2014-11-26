@@ -1,5 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
 
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
 /*
 * $$$$$$$\                              $$\ $$\                     
 * $$  __$$\                             $$ |$$ |                    
@@ -89,8 +99,9 @@
     display: none;
   }
 
-  .parallax {
-    font-size: 200%;
+  .displayShow {
+    -webkit-animation: fadeIn 4s;
+    animation: fadeIn 4s;
   }
 
    /* centre the content in the parallax layers */
@@ -116,26 +127,6 @@
     transform: translate(20%, -50%);
   }
 
- /*.spnMoreDetails {
-  position: absolute;
-  top : 40%;
-  right: 5%;
-  height: 130px;
-  width: 130px;
-  border-radius: 50%;
-  cursor: pointer;
- }
-
- .spnMoreDetails .fa {
-  margin-left: 36%;
- }
-
- .spnMoreDetails:hover {
-  background: antiquewhite;
-  -webkit-transition: all 0.5s;
-  transition : all 0.5s;
- }*/
-
   #group02 .title { color: orangered; }
   #group03 .title { color: blue; }
   #group04 .title { color: red; }
@@ -148,62 +139,6 @@
     -webkit-transition: -webkit-transform 0.5s;
     transition: transform 0.5s;
   }
-
-/* Page 2 effects */
-.additional_content {
-  z-index: 8;
-  position: absolute;
-  top : 100px;
-}
-
-/*
-*  /$$$$$$$$                  /$$                          
-* |__  $$__/                 | $$                          
-*    | $$  /$$$$$$   /$$$$$$ | $$$$$$$   /$$$$$$   /$$$$$$ 
-*    | $$ /$$__  $$ /$$__  $$| $$__  $$ |____  $$ /$$__  $$
-*    | $$| $$  \ $$| $$  \ $$| $$  \ $$  /$$$$$$$| $$  \__/
-*    | $$| $$  | $$| $$  | $$| $$  | $$ /$$__  $$| $$      
-*    | $$|  $$$$$$/| $$$$$$$/| $$$$$$$/|  $$$$$$$| $$      
-*    |__/ \______/ | $$____/ |_______/  \_______/|__/      
-*                  | $$                                    
-*                  | $$                                    
-*                  |__/                                    
-*/
-
-.parallax__layer--back.topbar,.parallax__layer--deep.topbar {
-  -webkit-transform: translateZ(0px) scale(1);
-  transform: translateZ(0px) scale(1);
-  background-position: 0% 45%;
-}
-
-div.title.topbar {
-  transform : translate(55%,-10%);
-  transition : transform 1s;
-}
-
-#group06 > div.title.topbar {
-  transform: translate(100%,-80%);
-  z-index: 6;
-  transition: transform 1s;
-}
-
-div.sub-title.topbar {
-  display: inline-block;
-}
-
-span.icon-wrap.topbar {
-  text-align: center;
-  position: absolute;
-  z-index: 100;
-  padding: 17px 10px;
-  border: 0px solid #b24e44;
-  background: #b24e44;
-  width: 50px;
-  top: -100px;
-  left: 0;
-  opacity: 0.8;
-  transition : opacity 1s;
-}
 
 /* style the groups
 *     /$$$$$$                                         
@@ -322,4 +257,168 @@ background: white;
 .side_nav:hover {
   opacity: 1;
   transition : all 0.5s;
+}
+
+
+/*
+*  /$$$$$$$$                  /$$                          
+* |__  $$__/                 | $$                          
+*    | $$  /$$$$$$   /$$$$$$ | $$$$$$$   /$$$$$$   /$$$$$$ 
+*    | $$ /$$__  $$ /$$__  $$| $$__  $$ |____  $$ /$$__  $$
+*    | $$| $$  \ $$| $$  \ $$| $$  \ $$  /$$$$$$$| $$  \__/
+*    | $$| $$  | $$| $$  | $$| $$  | $$ /$$__  $$| $$      
+*    | $$|  $$$$$$/| $$$$$$$/| $$$$$$$/|  $$$$$$$| $$      
+*    |__/ \______/ | $$____/ |_______/  \_______/|__/      
+*                  | $$                                    
+*                  | $$                                    
+*                  |__/                                    
+*/
+
+.parallax__layer--back.topbar,.parallax__layer--deep.topbar {
+  -webkit-transform: translateZ(0px) scale(1);
+  transform: translateZ(0px) scale(1);
+  background-position: 0% 45%;
+}
+
+div.title.topbar {
+  transform : translate(55%,-10%);
+  transition : transform 1s;
+}
+
+#group06 > div.title.topbar {
+  transform: translate(100%,-80%);
+  z-index: 6;
+  transition: transform 1s;
+}
+
+div.sub-title.topbar {
+  display: inline-block;
+}
+
+span.icon-wrap.topbar {
+  box-sizing : border-box;
+  text-align: center;
+  position: absolute;
+  z-index: 100;
+  padding: 17px 10px;
+  border: 0px solid #b24e44;
+  background: #b24e44;
+  width: 100px;
+  height: 100px;
+  top: -100px;
+  left: 0;
+  opacity: 0.8;
+  transition : opacity 1s;
+  cursor: pointer;
+}
+
+
+/* Additional Details 
+*  /$$$$$$        /$$       /$$   /$$               /$$       /$$$$$$$              /$$               /$$ /$$          
+* /$$__  $$      | $$      | $$  | $$              | $$      | $$__  $$            | $$              |__/| $$          
+*| $$  \ $$  /$$$$$$$  /$$$$$$$ /$$$$$$   /$$$$$$$ | $$      | $$  \ $$  /$$$$$$  /$$$$$$    /$$$$$$  /$$| $$  /$$$$$$$
+*| $$$$$$$$ /$$__  $$ /$$__  $$|_  $$_/  | $$__  $$| $$      | $$  | $$ /$$__  $$|_  $$_/   |____  $$| $$| $$ /$$_____/
+*| $$__  $$| $$  | $$| $$  | $$  | $$    | $$  \ $$| $$      | $$  | $$| $$$$$$$$  | $$      /$$$$$$$| $$| $$|  $$$$$$ 
+*| $$  | $$| $$  | $$| $$  | $$  | $$ /$$| $$  | $$| $$      | $$  | $$| $$_____/  | $$ /$$ /$$__  $$| $$| $$ \____  $$
+*| $$  | $$|  $$$$$$$|  $$$$$$$  |  $$$$/| $$  | $$| $$      | $$$$$$$/|  $$$$$$$  |  $$$$/|  $$$$$$$| $$| $$ /$$$$$$$/
+*|__/  |__/ \_______/ \_______/   \___/  |__/  |__/|__/      |_______/  \_______/   \___/   \_______/|__/|__/|_______/ 
+*/
+
+.divContent.topbar {
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    5px 5px 5px 0px rgba(50, 50, 50, 0.75);
+box-shadow:         5px 5px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+.additional_content {
+  z-index: 8;
+  position: absolute;
+  top : 100px;
+  width: 100%;
+  background-image: url('../assets/upfeathers.png');
+}
+
+.additional_content > h1 {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  font-size: 8em;
+  font-style: oblique;
+}
+
+.ib-container {
+  margin-left: 30%;
+}
+
+.ib-container:before,
+.ib-container:after {
+    content:"";
+    display:table;
+}
+.ib-container:after {
+    clear:both;
+}
+
+.ib-container article{
+    width: 160px;
+    height: 160px;
+    padding: 5px;
+    background: rgb(153,187,173);
+    cursor: pointer;
+    float: left;
+    border: 10px solid rgb(153,187,173);
+    text-align: left;
+    text-transform: none;
+    margin: 35px;
+    z-index: 1;
+    box-shadow: 
+        0px 0px 0px 10px rgba(153,187,173,1), 
+        1px 1px 3px 10px rgba(0,0,0,0.2);
+    -webkit-backface-visibility: hidden ;
+    transition: 
+        opacity 0.4s linear, 
+        transform 0.4s ease-in-out, 
+        box-shadow 0.4s ease-in-out;
+}
+
+.ib-container article.blur{
+    box-shadow: 0px 0px 20px 10px rgba(153,187,173,1);
+    transform: scale(0.9);
+    opacity: 0.7;
+}
+
+.ib-container article.active{
+    transform: scale(1.05);
+    box-shadow: 
+        0px 0px 0px 10px rgba(153,187,173,1), 
+        1px 11px 15px 10px rgba(0,0,0,0.4);
+    z-index: 100;   
+    opacity: 1;
+}
+/* Day
+*        /$$                    
+*       | $$                    
+*   /$$$$$$$  /$$$$$$  /$$   /$$
+*  /$$__  $$ |____  $$| $$  | $$
+* | $$  | $$  /$$$$$$$| $$  | $$
+* | $$  | $$ /$$__  $$| $$  | $$
+* |  $$$$$$$|  $$$$$$$|  $$$$$$$
+*  \_______/ \_______/ \____  $$
+*                      /$$  | $$
+*                     |  $$$$$$/
+*                      \______/ 
+*/
+
+.day {
+  font-family: 'Alegreya', serif;
+  font-size: 1.8em;
+  margin: 10px;
+  padding: 30px;
+  background-color: #8BC9AF;
+  border-radius: 10px;
+}
+
+.day p {
+  text-indent: 50px;
+  line-height: 1.5em;
+
 }

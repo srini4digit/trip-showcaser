@@ -14,8 +14,45 @@ $(document).ready(function(){
 
   addContent();
   drawTravelPath(tripdata);
+  blurOnHover();
+  
+  //Scroll reveal
+   new WOW().init();
+
+  // The image carousel
 
 });
+
+function blurOnHover(){
+   //Summary blur starts
+  var $container  = $('#ib-container'),
+    $articles   = $container.children('article'),
+    timeout;
+  
+  $articles.on( 'mouseenter', function( event ) {
+         
+    var $article    = $(this);
+    clearTimeout( timeout );
+    timeout = setTimeout( function() {
+         
+        if( $article.hasClass('active') ) return false;
+         
+        $articles.not($article).removeClass('active').addClass('blur');
+         
+        $article.removeClass('blur').addClass('active');
+         
+    }, 75 );
+     
+});
+ 
+$container.on( 'mouseleave', function( event ) {
+     
+    clearTimeout( timeout );
+    $articles.removeClass('active blur');
+     
+});
+  // The summary blur ends
+}
 
 function scrollTopTween(scrollTop) {
   return function() {
@@ -42,7 +79,7 @@ var addContents = d3.selectAll(".additional_content").data(tripdata.details); //
              .attr("class","icon-wrap topbar")
              .attr("data-group",function(d,i){ return "group0"+(i+1);})
              .html(function(d,i){
-              return '<i class="fa fa-angle-left fa-2x"></i>';
+              return '<i class="fa fa-angle-left fa-4x"></i>';
              })
              .on("click",function(){
                 // On Click add the other details
@@ -67,6 +104,7 @@ var addContents = d3.selectAll(".additional_content").data(tripdata.details); //
 
                 // Hide the details page
                 $(".additional_content").addClass("displayHide");
+                $(".additional_content").removeClass("displayShow");
 
                 //Show all other places
                 $(".parallax__group").removeClass("displayHide");
@@ -82,7 +120,7 @@ var innerA = mainContents.append("section").attr("class",function(d,i){ return "
             .append("a").attr("class","next").attr("href","#").attr("data-group",function(d,i){ return "group0"+(i+1);});
 
       innerA.append("span").attr("class","icon-wrap").html('<i class="fa fa-angle-right fa-4x"></i>');
-      innerA.append("div").html(function(d,i){ return '<span>More Info</span><h3>'+d.moredetailsinfo+'</h3><img src="'+d.images.moredetailsthumbnail+'" alt="Next thumb"/>'});
+      innerA.append("div").html(function(d,i){ return '<span>More Info</span><h3>'+d.moredetailsinfo.title+'</h3><img src="'+d.images.moredetailsthumbnail+'" alt="Next thumb"/>'});
       
       innerA.on("click",function(){
         // On Click add the other details
@@ -101,6 +139,7 @@ var innerA = mainContents.append("section").attr("class",function(d,i){ return "
         // Shrink the main div into the top bar
         $("#"+thisGroup+" > .divContent")
           .animate({ height:'100px'},800);
+        $("#"+thisGroup+" > .divContent").addClass("topbar");
         $("#"+thisGroup+" > .parallax__layer--back")
           .animate({ height:'100px'},800);  
         $("#"+thisGroup+" > .parallax__layer--back").addClass("topbar");
@@ -114,6 +153,7 @@ var innerA = mainContents.append("section").attr("class",function(d,i){ return "
 
         // Show the details page
         $("."+thisGroup).removeClass("displayHide");
+        $("."+thisGroup).addClass("displayShow");
 
 
         //$("#"+$(this).attr("data-group")).addClass("displayHide");
