@@ -1,0 +1,183 @@
+tripdata = {
+  
+  "visitedPlaces" : ["iceland","netherlands","france","swiss","italy","austria","usa"],
+  "details" : [
+    {
+      "id" : "01",
+      "color" : "beige",
+      "from" : "usa",
+      "transport_to" : "flight",
+      "transport_in" : ["car"],
+      "title" : "iceland",
+      "subtitle" : "Keflavik, Reykjavik",
+      "moredetailsinfo" : {
+          "title" : "Iceland - Land of Fire and Ice",
+          "summary" : [],
+          "days" : [
+            {
+              "title" : "Day 01 - Arrival",
+              "content" : "Something something meri jaan !"
+            }
+          ]
+
+          },
+      "images" : {
+        "flag" : "assets/icons/flag-01.png",
+        "moredetailsthumbnail" : "assets/pics/21.png"
+      }
+      
+    },
+    {
+      "id" : "02",
+      "color" : "orangered",
+      "from" : "iceland",
+      "transport_to" : "flight",
+      "transport_in" : ["car"],
+      "title" : "netherlands",
+      "subtitle" : "Amsterdam, Keukenhof",
+      "moredetailsinfo" : { 
+        "title" : "Netherlands - Land of Windmills, Weed and ahem..",
+        "summary" : [],
+        "days" : [
+          {
+            "title" : "Day 01 - Arrival",
+            "content" : "Something something meri jaan !"
+          }
+        ]
+
+        },
+      "images" : {
+        "flag" : "assets/icons/flag-02.png",
+        "moredetailsthumbnail" : "assets/pics/21.png"
+      }
+      
+    },
+    {
+      "id" : "03",
+      "color" : "orangered",
+      "from" : "netherlands",
+      "transport_to" : "flight",
+      "transport_in" : ["train","tram","bus"],
+      "title" : "france",
+      "subtitle" : "Paris, Versailles",
+      "moredetailsinfo" : {
+          "title" : "France - Land of Art and Fashion",
+          "summary" : [],
+          "days" : [
+            {
+              "title" : "Day 01 - Arrival",
+              "content" : "Something something meri jaan !"
+            }
+          ]
+
+          },
+      "images" : {
+        "flag" : "assets/icons/flag-03.png",
+        "moredetailsthumbnail" : "assets/pics/21.png"
+      }
+      
+    },
+    {
+      "id" : "04",
+      "color" : "orangered",
+      "from" : "france",
+      "transport_to" : "train",
+      "transport_in" : ["train","bus"],
+      "title" : "Switzerland",
+      "subtitle" : "Brig, Zermatt, Interlaken, Lucerne",
+      "moredetailsinfo" : {
+        "title" :  "Switzerland - Land of the Alps",
+        "summary" : [],
+        "days" : [
+          {
+            "title" : "Day 01 - Arrival",
+            "content" : "Something something meri jaan !"
+          }
+        ]
+
+        },
+      "images" : {
+        "flag" : "assets/icons/flag-04.png",
+        "moredetailsthumbnail" : "assets/pics/21.png"
+      }
+      
+    },
+    {
+      "id" : "05",
+      "color" : "orangered",
+      "from" : "swiss",
+      "transport_to" : "train",
+      "transport_in" : ["train","bus"],
+      "title" : "italy",
+      "subtitle" : "Rome, Venice",
+      "moredetailsinfo" : {
+       "title" :  "Italy - Land of Ancient Ruins",
+        "summary" : [],
+        "days" : [
+          {
+            "title" : "Day 01 - Arrival",
+            "content" : "Something something meri jaan !"
+          }
+        ]
+
+        },
+      "images" : {
+        "flag" : "assets/icons/flag-05.png",
+        "moredetailsthumbnail" : "assets/pics/21.png"
+      }
+      
+    },
+    {
+      "id" : "06",
+      "color" : "orangered",
+      "from" : "italy",
+      "transport_to" : "train",
+      "transport_in" : ["train","bus"],
+      "title" : "Austria",
+      "subtitle" : "Vienna",
+      "moredetailsinfo" : {
+        "title" :  "Austria - Land of the Hapsburgs",
+        "summary" : [],
+        "days" : [
+          {
+            "title" : "Day 01 - Arrival",
+            "content" : "Something something meri jaan !"
+          }
+        ]
+
+        },
+      "images" : {
+        "flag" : "assets/icons/flag-06.png",
+        "moredetailsthumbnail" : "assets/pics/21.png"
+      }
+      
+    },
+    {
+      "id" : "07",
+      "color" : "orangered",
+      "from" : "austria",
+      "transport_to" : "flight",
+      "transport_in" : ["train","tram"],
+      "title" : "USA",
+      "subtitle" : "Jersey City",
+      "moredetailsinfo" :  {
+        "title" : "USA - Land of Freedom",
+        "summary" : [],
+        "days" : [
+          {
+            "title" : "Day 01 - Arrival",
+            "content" : "Something something meri jaan !"
+          }
+        ]
+
+        },
+      "images" : {
+        "flag" : "assets/icons/flag-07.png",
+        "moredetailsthumbnail" : "assets/pics/21.png"
+      }
+      
+    }
+
+  ]
+  
+};
