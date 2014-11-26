@@ -335,7 +335,7 @@ box-shadow:         5px 5px 5px 0px rgba(50, 50, 50, 0.75);
   position: absolute;
   top : 100px;
   width: 100%;
-  background-image: url('../assets/upfeathers.png');
+  background-image: url('../assets/bg.png');
 }
 
 .additional_content > h1 {
@@ -413,12 +413,52 @@ box-shadow:         5px 5px 5px 0px rgba(50, 50, 50, 0.75);
   font-size: 1.8em;
   margin: 10px;
   padding: 30px;
-  background-color: #8BC9AF;
-  border-radius: 10px;
+
 }
 
 .day p {
   text-indent: 50px;
-  line-height: 1.5em;
+  line-height: 33px;
 
+}
+
+/*
+*   /$$$$$$                                                              /$$
+*  /$$__  $$                                                            | $$
+* | $$  \__/  /$$$$$$   /$$$$$$   /$$$$$$  /$$   /$$  /$$$$$$$  /$$$$$$ | $$
+* | $$       |____  $$ /$$__  $$ /$$__  $$| $$  | $$ /$$_____/ /$$__  $$| $$
+* | $$        /$$$$$$$| $$  \__/| $$  \ $$| $$  | $$|  $$$$$$ | $$$$$$$$| $$
+* | $$    $$ /$$__  $$| $$      | $$  | $$| $$  | $$ \____  $$| $$_____/| $$
+* |  $$$$$$/|  $$$$$$$| $$      |  $$$$$$/|  $$$$$$/ /$$$$$$$/|  $$$$$$$| $$
+*  \______/  \_______/|__/       \______/  \______/ |_______/  \_______/|__/
+*/
+
+.divCarousel {
+  margin : 20px 0px; 
+}
+
+.divCarousel .item{
+  margin: 3px;
+}
+.divCarousel .item img{
+  display: block;
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.owl-prev {
+display: inline-block;
+position: relative;
+float: left;
+top: -180px;
+left: -25px;
+}
+
+.owl-next {
+display: inline-block;
+position: relative;
+float: right;
+top: -180px;
+right: -25px;
 }
