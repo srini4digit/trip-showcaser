@@ -20,6 +20,17 @@ $(document).ready(function(){
    new WOW().init();
 
   // The image carousel
+  $(".divCarousel").owlCarousel({
+ 
+      // autoPlay: 3000, //Set AutoPlay to 3 seconds
+      items : 4,
+      itemsDesktop : [1199,3],
+      itemsDesktopSmall : [979,3],
+      itemsScaleUp : true,
+      navigation : true,
+      navigationText : ['<i class="fa fa-angle-left fa-2x"></i>','<i class="fa fa-angle-right fa-2x"></i>'],
+      mouseDrag : false
+  });
 
 });
 
