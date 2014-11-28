@@ -18,6 +18,10 @@ $(document).ready(function(){
   
   //Scroll reveal
    new WOW().init();
+   // $('.day').addClass("hidden").viewportChecker({
+   //      classToAdd: 'visible animated fadeIn',
+   //      offset: 100
+   //  });
 
   // The image carousel
   $(".divCarousel").owlCarousel({
@@ -208,14 +212,12 @@ circlePlaces.enter().append("svg:circle")
                       .on("mouseout",function(d,i){
                         d3.select(this).style("stroke-width", 1);
                       })
-                      .on("click",function(d,i){
-
-                        var scrollable = d3.select("#group"+d.id);
-                        var scrollheight = scrollable.property("scrollHeight");
-                        console.log(scrollable);
-                        scrollable.transition().duration(3000)
+                      .on("click",function(d,i){ // Animate on clicking the country flag
+                        var scrollable = d3.select("#group01");
+                        var scrollheight = scrollable.property("scrollHeight") * (d.id - 1);
+                        console.log("#group"+d.id+" : "+scrollheight);
+                        d3.select(".parallax").transition().duration(1500)
                                 .tween("uniquetweenname", scrollTopTween(scrollheight));
-
                       });
 
 var gPlaces = svgTravel.append("g").attr("class","gPath").attr("transform","translate(0,-80)")
