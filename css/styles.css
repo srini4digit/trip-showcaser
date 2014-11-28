@@ -341,7 +341,7 @@ box-shadow:         5px 5px 5px 0px rgba(50, 50, 50, 0.75);
 .additional_content > h1 {
   font-family: 'Playfair Display', serif;
   text-align: center;
-  font-size: 8em;
+  font-size: 6em;
   font-style: oblique;
 }
 
@@ -411,7 +411,7 @@ box-shadow:         5px 5px 5px 0px rgba(50, 50, 50, 0.75);
 .day {
   font-family: 'Alegreya', serif;
   font-size: 1.8em;
-  margin: 10px;
+  margin: 10px 10%;
   padding: 30px;
 
 }
@@ -442,8 +442,8 @@ box-shadow:         5px 5px 5px 0px rgba(50, 50, 50, 0.75);
 }
 .divCarousel .item img{
   display: block;
-  width: 400px;
-  height: auto;
+  width: 100%;
+  min-height: 250px;
   border-radius: 10px;
 }
 
