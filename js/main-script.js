@@ -30,22 +30,25 @@ $(document).ready(function(){
       items : 4,
       itemsDesktop : [1199,3],
       itemsDesktopSmall : [979,3],
-      itemsScaleUp : true,
+      // itemsScaleUp : true,
       navigation : true,
-      navigationText : ['<i class="fa fa-angle-left fa-2x"></i>','<i class="fa fa-angle-right fa-2x"></i>'],
+      navigationText : ['<i class="fa fa-angle-left fa-5x"></i>','<i class="fa fa-angle-right fa-5x"></i>'],
       mouseDrag : false
   });
 
 });
 
+function addCarousel(groupId){
+
+}
+
 function blurOnHover(){
-   //Summary blur starts
-  var $container  = $('#ib-container'),
+//Summary blur starts
+  var $container  = $('.ib-container'),
     $articles   = $container.children('article'),
     timeout;
   
   $articles.on( 'mouseenter', function( event ) {
-         
     var $article    = $(this);
     clearTimeout( timeout );
     timeout = setTimeout( function() {
@@ -56,16 +59,12 @@ function blurOnHover(){
          
         $article.removeClass('blur').addClass('active');
          
-    }, 75 );
-     
-});
+    }, 75 );});
  
-$container.on( 'mouseleave', function( event ) {
-     
+  $container.on( 'mouseleave', function( event ) {
     clearTimeout( timeout );
     $articles.removeClass('active blur');
-     
-});
+  });
   // The summary blur ends
 }
 
@@ -77,20 +76,17 @@ function scrollTopTween(scrollTop) {
 }
 
 function addContent(){
-
- var mainContents = d3.selectAll(".divContent").data(tripdata.details); // Grab all the placeholders
- // Attach the titles and subtitles
+// Grab all the placeholders
+ var mainContents = d3.selectAll(".divContent").data(tripdata.details); 
+// Attach the titles and subtitles
  mainContents.append("div") 
              .attr("class","title")
-             .html(function(d,i){
-              return d.title; // + "<div class='sub-title'>"+d.subtitle+"</div>";
-             })
+             .html(function(d,i){return d.title;})
              .append("div").attr("class","sub-title").html(function(d,i){ return d.subtitle;});
-             ;
 
-var addContents = d3.selectAll(".additional_content").data(tripdata.details); // Grab all the additional content
- // Attach the back link
- addContents.append("span") 
+  var addContents = d3.selectAll(".additional_content").data(tripdata.details); // Grab all the additional content
+// Attach the back link
+  addContents.append("span") 
              .attr("class","icon-wrap topbar")
              .attr("data-group",function(d,i){ return "group0"+(i+1);})
              .html(function(d,i){
@@ -126,8 +122,30 @@ var addContents = d3.selectAll(".additional_content").data(tripdata.details); //
 
 
                 //$("#"+$(this).attr("data-group")).addClass("displayHide");
+                });
+// Add the country title
+  addContents.append("h1").attr("class","country").text(function(d){ console.log(d.moredetailsinfo.title); return d.moredetailsinfo.title; });
+//Add the summary
+var secIB = addContents.append("div").attr("class","divSummary").append("section").attr("class","ib-container");
+    secIB.selectAll("article").data(function(d){ return d.moredetailsinfo.summary;})
+         .enter()
+         .append("article")
+         .html(function(d,i){
+            if(i == 0 ){ return '<i class="fa fa-usd fa-5x"></i>'+d.total;}
+            else if(i == 1 ){ return d.days+'<i class="fa fa-sun-o fa-3x"></i>'+d.nights+'<i class="fa fa-moon-o fa-3x"></i>';}
+            else { return d.def;}
+         });
 
-      })
+// Add the days
+  var days = addContents.selectAll("div.day").data(function(d){ return d.moredetailsinfo.days; });
+  var carousel = days.enter().append("div").attr("class","day");
+      carousel.append("h4").text(function(d){ return d.title ;})
+      carousel.append("p").attr("class","content").text(function(d){ return d.content ;})
+      carousel = carousel.append("div").attr("class","divCarousel");
+// Add the Carousel Items
+var carouselItems = carousel.selectAll("div.item").data(function(d){ return d.captions; });
+    carouselItems.enter().append("div").attr("class","item").html(function(d,i,j){ 
+      return '<figure class="effect-julia"><img src="assets/pics/0/'+j+'_'+i+'.jpg" alt="Iceland"/><figcaption><div><p>'+d+'</p></div></figcaption></figure>';});
 
 // Now add the "More Details link"
 var innerA = mainContents.append("section").attr("class",function(d,i){ return "color-"+d.id})
@@ -173,7 +191,7 @@ var innerA = mainContents.append("section").attr("class",function(d,i){ return "
 
         //$("#"+$(this).attr("data-group")).addClass("displayHide");
 
-      });
+        });
 
 }
 
@@ -195,9 +213,7 @@ function drawTravelPath(tripdata){
                    .append("image")
                     .attr("xlink:href", function(d,i){ return d.images.flag; })
                     .attr("x",6).attr("y",6).attr('width', 37).attr('height', 37);
-
 var circlePlaces = gCircles.selectAll("circle").data(tripdata.details);
-
 circlePlaces.enter().append("svg:circle")
                       .attr("cx", 50)
                       .attr("cy",function(d,i){ return (i+1) * space ;})
@@ -216,7 +232,7 @@ circlePlaces.enter().append("svg:circle")
                         var scrollable = d3.select("#group01");
                         var scrollheight = scrollable.property("scrollHeight") * (d.id - 1);
                         console.log("#group"+d.id+" : "+scrollheight);
-                        d3.select(".parallax").transition().duration(1500)
+                        d3.select(".parallax").transition().duration(2000)
                                 .tween("uniquetweenname", scrollTopTween(scrollheight));
                       });
 

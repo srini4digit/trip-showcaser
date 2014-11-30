@@ -11,12 +11,22 @@ tripdata = {
       "title" : "iceland",
       "subtitle" : "Keflavik, Reykjavik",
       "moredetailsinfo" : {
-          "title" : "Iceland - Land of Fire and Ice",
-          "summary" : [],
+          "title" : "Land of Fire and Ice",
+          "summary" : [{"total" : 1800},{"days" : 2.5, "nights" : 1},{"def" : "Geysers", "nice" : "Thingvitlier"}],
           "days" : [
             {
               "title" : "Day 01 - Arrival",
-              "content" : "Something something meri jaan !"
+              "content" : "We landed on this beautiful island of molten lava and headed straight to the 'Blue Lagoon'.There is something about a barren piece of land with gushing winds ...",
+              "maxFiles" : 9 ,
+              "captions" : [
+              "Blue Lagoon","Blue Lagoon","Blue Lagoon","Blue Lagoon","Church","Downtown Reykjyavik","Downtown Reykjyavik",
+              "Downtown Reykjyavik","Inside the Church"]
+            },
+            {
+              "title" : "Day 02 - Golden Circle",
+              "content" : "We landed on this beautiful island of molten lava and headed straight to the 'Blue Lagoon'.There is something about a barren piece of land with gushing winds ...",
+              "maxFiles" : 9 ,
+              "captions" : ["Icelandic Horse","Icelandic Horse","Golden Circle Road","Geysir"]
             }
           ]
 
@@ -36,13 +46,17 @@ tripdata = {
       "title" : "netherlands",
       "subtitle" : "Amsterdam, Keukenhof",
       "moredetailsinfo" : { 
-        "title" : "Netherlands - Land of Windmills, Weed and ahem..",
-        "summary" : [],
+        "title" : "Land of Windmills, Weed and ahem..",
+        "summary" : [{"total" : 1800},{"days" : 2.5, "nights" : 1},{"def" : "Geysers", "nice" : "Thingvitlier"}],
         "days" : [
           {
-            "title" : "Day 01 - Arrival",
-            "content" : "Something something meri jaan !"
-          }
+              "title" : "Day 01 - Arrival",
+              "content" : "We landed on this beautiful island of molten lava and headed straight to the 'Blue Lagoon'.There is something about a barren piece of land with gushing winds ...",
+              "maxFiles" : 9 ,
+              "captions" : [
+              "Blue Lagoon","Blue Lagoon","Blue Lagoon","Blue Lagoon","Church","Downtown Reykjyavik","Downtown Reykjyavik",
+              "Downtown Reykjyavik","Inside the Church"]
+            }
         ]
 
         },
@@ -61,12 +75,16 @@ tripdata = {
       "title" : "france",
       "subtitle" : "Paris, Versailles",
       "moredetailsinfo" : {
-          "title" : "France - Land of Art and Fashion",
-          "summary" : [],
+          "title" : "Land of Art and Fashion",
+          "summary" : [{"total" : 1800},{"days" : 2.5, "nights" : 1},{"def" : "Geysers", "nice" : "Thingvitlier"}],
           "days" : [
             {
               "title" : "Day 01 - Arrival",
-              "content" : "Something something meri jaan !"
+              "content" : "We landed on this beautiful island of molten lava and headed straight to the 'Blue Lagoon'.There is something about a barren piece of land with gushing winds ...",
+              "maxFiles" : 9 ,
+              "captions" : [
+              "Blue Lagoon","Blue Lagoon","Blue Lagoon","Blue Lagoon","Church","Downtown Reykjyavik","Downtown Reykjyavik",
+              "Downtown Reykjyavik","Inside the Church"]
             }
           ]
 
@@ -86,13 +104,17 @@ tripdata = {
       "title" : "Switzerland",
       "subtitle" : "Brig, Zermatt, Interlaken, Lucerne",
       "moredetailsinfo" : {
-        "title" :  "Switzerland - Land of the Alps",
-        "summary" : [],
+        "title" :  "Land of the Alps",
+        "summary" : [{"total" : 1800},{"days" : 2.5, "nights" : 1},{"def" : "Geysers", "nice" : "Thingvitlier"}],
         "days" : [
           {
-            "title" : "Day 01 - Arrival",
-            "content" : "Something something meri jaan !"
-          }
+              "title" : "Day 01 - Arrival",
+              "content" : "We landed on this beautiful island of molten lava and headed straight to the 'Blue Lagoon'.There is something about a barren piece of land with gushing winds ...",
+              "maxFiles" : 9 ,
+              "captions" : [
+              "Blue Lagoon","Blue Lagoon","Blue Lagoon","Blue Lagoon","Church","Downtown Reykjyavik","Downtown Reykjyavik",
+              "Downtown Reykjyavik","Inside the Church"]
+            }
         ]
 
         },
@@ -111,13 +133,17 @@ tripdata = {
       "title" : "italy",
       "subtitle" : "Rome, Venice",
       "moredetailsinfo" : {
-       "title" :  "Italy - Land of Ancient Ruins",
-        "summary" : [],
+       "title" :  "Land of Ancient Ruins",
+        "summary" : [{"total" : 1800},{"days" : 2.5, "nights" : 1},{"def" : "Geysers", "nice" : "Thingvitlier"}],
         "days" : [
           {
-            "title" : "Day 01 - Arrival",
-            "content" : "Something something meri jaan !"
-          }
+              "title" : "Day 01 - Arrival",
+              "content" : "We landed on this beautiful island of molten lava and headed straight to the 'Blue Lagoon'.There is something about a barren piece of land with gushing winds ...",
+              "maxFiles" : 9 ,
+              "captions" : [
+              "Blue Lagoon","Blue Lagoon","Blue Lagoon","Blue Lagoon","Church","Downtown Reykjyavik","Downtown Reykjyavik",
+              "Downtown Reykjyavik","Inside the Church"]
+            }
         ]
 
         },
@@ -136,13 +162,17 @@ tripdata = {
       "title" : "Austria",
       "subtitle" : "Vienna",
       "moredetailsinfo" : {
-        "title" :  "Austria - Land of the Hapsburgs",
-        "summary" : [],
+        "title" :  "Land of the Hapsburgs",
+        "summary" : [{"total" : 1800},{"days" : 2.5, "nights" : 1},{"def" : "Geysers", "nice" : "Thingvitlier"}],
         "days" : [
           {
-            "title" : "Day 01 - Arrival",
-            "content" : "Something something meri jaan !"
-          }
+              "title" : "Day 01 - Arrival",
+              "content" : "We landed on this beautiful island of molten lava and headed straight to the 'Blue Lagoon'.There is something about a barren piece of land with gushing winds ...",
+              "maxFiles" : 9 ,
+              "captions" : [
+              "Blue Lagoon","Blue Lagoon","Blue Lagoon","Blue Lagoon","Church","Downtown Reykjyavik","Downtown Reykjyavik",
+              "Downtown Reykjyavik","Inside the Church"]
+            }
         ]
 
         },
@@ -161,13 +191,17 @@ tripdata = {
       "title" : "USA",
       "subtitle" : "Jersey City",
       "moredetailsinfo" :  {
-        "title" : "USA - Land of Freedom",
-        "summary" : [],
+        "title" : "Land of the Free",
+        "summary" : [{"total" : 1800},{"days" : 2.5, "nights" : 1},{"def" : "Geysers", "nice" : "Thingvitlier"}],
         "days" : [
           {
-            "title" : "Day 01 - Arrival",
-            "content" : "Something something meri jaan !"
-          }
+              "title" : "Day 01 - Arrival",
+              "content" : "We landed on this beautiful island of molten lava and headed straight to the 'Blue Lagoon'.There is something about a barren piece of land with gushing winds ...",
+              "maxFiles" : 9 ,
+              "captions" : [
+              "Blue Lagoon","Blue Lagoon","Blue Lagoon","Blue Lagoon","Church","Downtown Reykjyavik","Downtown Reykjyavik",
+              "Downtown Reykjyavik","Inside the Church"]
+            }
         ]
 
         },

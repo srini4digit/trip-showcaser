@@ -115,6 +115,7 @@
     position: absolute;
     left: 15%;
     top: 10%;
+    text-shadow: 5px 5px 8px rgba(150, 150, 150, 1);
     /*-webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);*/
   }
@@ -179,8 +180,7 @@
     z-index: 4; /* slide over group 2 and 4 */
   }
   #group03 .parallax__layer--base {
-    /*background: rgb(153,216,101);*/
-     background: url('../assets/pics/03-paris.jpg');
+    background: url('../assets/pics/03-paris.jpg');
     background-size: 1790px 1400px;
     background-repeat: no-repeat;
     background-position: 0% 20%;
@@ -190,7 +190,6 @@
     z-index: 2; /* slide under group 3 and 5 */
   }
   #group04 .parallax__layer--deep {
-    /*height: 150vh;*/
     background: url('../assets/pics/04-swiss.jpg');
     background-size: 1790px 1400px;
     background-repeat: no-repeat;
@@ -362,16 +361,16 @@ box-shadow:         5px 5px 5px 0px rgba(50, 50, 50, 0.75);
     width: 160px;
     height: 160px;
     padding: 5px;
-    background: rgb(153,187,173);
+    background: rgb(94,159,163);
     cursor: pointer;
     float: left;
-    border: 10px solid rgb(153,187,173);
+    border: 10px solid rgb(94,159,163);
     text-align: left;
     text-transform: none;
     margin: 35px;
     z-index: 1;
     box-shadow: 
-        0px 0px 0px 10px rgba(153,187,173,1), 
+        0px 0px 0px 10px rgba(94,159,163,1), 
         1px 1px 3px 10px rgba(0,0,0,0.2);
     -webkit-backface-visibility: hidden ;
     transition: 
@@ -381,7 +380,7 @@ box-shadow:         5px 5px 5px 0px rgba(50, 50, 50, 0.75);
 }
 
 .ib-container article.blur{
-    box-shadow: 0px 0px 20px 10px rgba(153,187,173,1);
+    box-shadow: 0px 0px 20px 10px rgba(94,159,163,1);
     transform: scale(0.9);
     opacity: 0.7;
 }
@@ -389,7 +388,7 @@ box-shadow:         5px 5px 5px 0px rgba(50, 50, 50, 0.75);
 .ib-container article.active{
     transform: scale(1.05);
     box-shadow: 
-        0px 0px 0px 10px rgba(153,187,173,1), 
+        0px 0px 0px 10px rgba(94,159,163,1), 
         1px 11px 15px 10px rgba(0,0,0,0.4);
     z-index: 100;   
     opacity: 1;
@@ -416,7 +415,7 @@ box-shadow:         5px 5px 5px 0px rgba(50, 50, 50, 0.75);
 
 }
 
-.day p {
+.day p.content {
   text-indent: 50px;
   line-height: 33px;
 
@@ -435,17 +434,19 @@ box-shadow:         5px 5px 5px 0px rgba(50, 50, 50, 0.75);
 
 .divCarousel {
   margin : 20px 0px; 
+  font-size: 12px;
 }
 
-.divCarousel .item{
+/*.divCarousel .item{
   margin: 3px;
-}
-.divCarousel .item img{
+}*/
+
+/*.divCarousel .item img{
   display: block;
   width: 100%;
   min-height: 250px;
-  border-radius: 10px;
-}
+  border-radius: 20%;
+}*/
 
 .owl-prev {
 display: inline-block;
