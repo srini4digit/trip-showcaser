@@ -161,7 +161,8 @@
   #group01 .parallax__layer--base {
     /*background: rgb(102,204,102);*/
     background: url('../assets/pics/01-iceland.jpg');
-    background-size: 1790px 1400px;
+    /*background-size: 1790px 1400px;*/
+    background-size: 100% auto;
     background-repeat: no-repeat;
   }
 
@@ -171,7 +172,7 @@
   #group02 .parallax__layer--back {
     /*background: rgb(123,210,102);*/
      background: url('../assets/pics/02-amsterdam.jpg');
-    background-size: 1790px 1400px;
+    background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: 0% 30%;
   }
@@ -181,7 +182,7 @@
   }
   #group03 .parallax__layer--base {
     background: url('../assets/pics/03-paris.jpg');
-    background-size: 1790px 1400px;
+    background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: 0% 20%;
   }
@@ -191,7 +192,7 @@
   }
   #group04 .parallax__layer--deep {
     background: url('../assets/pics/04-swiss.jpg');
-    background-size: 1790px 1400px;
+    background-size: 100% auto;
     background-repeat: no-repeat;
   }
 
@@ -200,7 +201,7 @@
   }
   #group05 .parallax__layer--base {
     background: url('../assets/pics/05-rome.jpg');
-    background-size: 1790px 1400px;
+    background-size: 100% auto;
     background-repeat: no-repeat;
   }
 
@@ -209,7 +210,7 @@
   }
   #group06 .parallax__layer--back {
     background: url('../assets/pics/06-austria.jpg');
-    background-size: 1790px 1400px;
+    background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: 0% 80%;
     /*height: 150vh;*/
@@ -221,7 +222,7 @@
   #group07 .parallax__layer--base {
     /*background: rgb(255,241,100);*/
         background: url('../assets/pics/07-usa.jpg');
-    background-size: 1790px 1400px;
+    background-size: 100% auto;
     background-repeat: no-repeat;
   }
 /*
@@ -258,6 +259,18 @@ background: white;
   transition : all 0.5s;
 }
 
+.d3tooltip {
+  fill : #933C60;
+}
+
+.d3tooltip rect {
+}
+
+.d3tooltip text {
+  font-size: 16px;
+  text-transform: capitalize;
+  fill : white;
+}
 
 /*
 *  /$$$$$$$$                  /$$                          
