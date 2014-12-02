@@ -124,7 +124,7 @@ function addContent(){
                 //$("#"+$(this).attr("data-group")).addClass("displayHide");
                 });
 // Add the country title
-  addContents.append("h1").attr("class","country").text(function(d){ console.log(d.moredetailsinfo.title); return d.moredetailsinfo.title; });
+  addContents.append("h1").attr("class","country").text(function(d){ return d.moredetailsinfo.title; });
 //Add the summary
 var secIB = addContents.append("div").attr("class","divSummary").append("section").attr("class","ib-container");
     secIB.selectAll("article").data(function(d){ return d.moredetailsinfo.summary;})
@@ -145,7 +145,8 @@ var secIB = addContents.append("div").attr("class","divSummary").append("section
 // Add the Carousel Items
 var carouselItems = carousel.selectAll("div.item").data(function(d){ return d.captions; });
     carouselItems.enter().append("div").attr("class","item").html(function(d,i,j){ 
-      return '<figure class="effect-julia"><img src="assets/pics/0/'+j+'_'+i+'.jpg" alt="Iceland"/><figcaption><div><p>'+d+'</p></div></figcaption></figure>';});
+      if(j <=1 )
+        return '<figure class="effect-julia"><img src="assets/pics/0/'+j+'_'+i+'.jpg" alt="Iceland"/><figcaption><div><p>'+d+'</p></div></figcaption></figure>';});
 
 // Now add the "More Details link"
 var innerA = mainContents.append("section").attr("class",function(d,i){ return "color-"+d.id})
@@ -195,6 +196,10 @@ var innerA = mainContents.append("section").attr("class",function(d,i){ return "
 
 }
 
+function tweenRotate(d, i, a) {
+      return d3.interpolateString("rotate(30)", "rotate(0)");
+    }
+
 function drawTravelPath(tripdata){
 
   var svgTravel = d3.select(".side_nav").append("svg");
@@ -213,6 +218,14 @@ function drawTravelPath(tripdata){
                    .append("image")
                     .attr("xlink:href", function(d,i){ return d.images.flag; })
                     .attr("x",6).attr("y",6).attr('width', 37).attr('height', 37);
+
+// Show the tooltip
+var gTooltip = gCircles.append("g").attr("class","d3tooltip").style({"opacity" : 0}).append("g").attr("class","d3tt");
+    gTooltip.append("svg:path").attr("width","75px").attr("height","75px").attr("d","M80,0c0,0-5.631,14.445-25.715,27.213C29.946,42.688,12.79,33.997,3.752,30.417  c-3.956-1.567-4.265,1.021-2.966,3.814C16.45,67.934,80,79.614,80,79.614l0,0V0z").attr("transform","translate(-25,-25)");
+    gTooltip.append("svg:rect").attr("x",0).attr("y",-30).attr("rx",20).attr("ry",20).attr("width","150px").attr("height","100px");
+    gTooltip.append("text").text("Testing yo").attr("x",20).attr("y",10);
+    gTooltip.attr("transform","rotate(30,-25,-5)");
+
 var circlePlaces = gCircles.selectAll("circle").data(tripdata.details);
 circlePlaces.enter().append("svg:circle")
                       .attr("cx", 50)
@@ -221,20 +234,30 @@ circlePlaces.enter().append("svg:circle")
                       .style("stroke",function(d,i){ return "saddlebrown"; })
                       .style("stroke-width", 1)
                       .style("fill",function(d,i){ return "url(#flag-"+d.id+")"})
-                      .on("mouseover",function(d,i){
+                     .on("mouseover",function(d,i){
                         d3.select(this).style("stroke-width", 3);
                         d3.select(this).style("cursor", "pointer");
+                        // Tooltip animation
+                        svgTravel.attr("width",svgWidth + 150);
+                        d3.select("g.d3tooltip").attr("transform", "translate(100,"+((i+1) * space)+")" );
+                        d3.select("g.d3tooltip").transition().duration(800).style("opacity",1);
+                        d3.select("g.d3tt").transition().duration(600).attr("transform","rotate(0)");
+                                                        
+                        gTooltip.select("text").text( d.title );
                       })
                       .on("mouseout",function(d,i){
+                        svgTravel.attr("width",svgWidth);
                         d3.select(this).style("stroke-width", 1);
+                        d3.select("g.d3tooltip").style("opacity",0); // Tooltip animation
+                        d3.select("g.d3tt").attr("transform","rotate(30,-25,-5)"); // Tooltip animation
                       })
-                      .on("click",function(d,i){ // Animate on clicking the country flag
+                      .on("click",function(d,i){ // Animate scroll on clicking the country flag
                         var scrollable = d3.select("#group01");
                         var scrollheight = scrollable.property("scrollHeight") * (d.id - 1);
-                        console.log("#group"+d.id+" : "+scrollheight);
                         d3.select(".parallax").transition().duration(2000)
                                 .tween("uniquetweenname", scrollTopTween(scrollheight));
                       });
+                      
 
 var gPlaces = svgTravel.append("g").attr("class","gPath").attr("transform","translate(0,-80)")
                        .style("stroke","black").style("stroke-width", 1).style("fill","white").style("opacity",0.5);
@@ -285,7 +308,11 @@ imageTransport.enter().append("image")
                       .attr("height", 30).attr("width",30)
                       .attr("class",function(d,i){
                           return  "imgPath"+d.transport_to;
-                        });
+                        })
+                      .on("mouseover",function(d,i){
+                      console.log("yup");
+                      });
+
 
 
 }
